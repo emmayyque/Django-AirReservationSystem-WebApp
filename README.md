@@ -1,5 +1,5 @@
 # Django-AirReservationSystem-WebApp
-Developed an Air Reservation System on django, covers all the modules from booking flights to managing flights schedules etc.
+Developed a fully functional Air Reservation System on django, which covers all the modules from booking flights to managing flights schedules etc. Designed and developed the complete frontend and backend of the project.
 
 ![ARS 1](https://github.com/emmayyque/Django-AirReservationSystem-WebApp/assets/71573485/b8bc0b2c-dbd4-4c9d-a099-86b81a1aa4ee)
 ![ARS 2](https://github.com/emmayyque/Django-AirReservationSystem-WebApp/assets/71573485/2ba951fd-c7aa-423d-9b51-f2bb4d41874b)
