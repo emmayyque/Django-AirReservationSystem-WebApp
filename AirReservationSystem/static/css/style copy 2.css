@@ -1,0 +1,745 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jost', sans-serif;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.row div {
+    width: 100%;
+}
+
+.inner-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px;
+}
+
+a {
+    text-decoration: none;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #FFFFFF;
+    background-color: #0254B0;
+    padding: 15px 200px;
+    position: fixed;
+    z-index: 10;
+}
+
+header a {
+    color: #FFFFFF;
+}
+
+header img {
+    width: 5%;
+}
+
+header nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+header nav ul li {
+    margin: 0px 20px;
+}
+
+header div a {
+    margin: 0px 15px;
+}
+
+header div a:last-child {
+    border: 2px solid #FFFFFF;
+    padding: 5px 25px;
+    border-radius: 50px;
+}
+
+main #home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 200px;
+    height: 100vh;
+    overflow: hidden;
+}
+
+main section #home-left {
+    width: 50%;
+    opacity: 0;
+    animation: showLeftHome 0.5s ease-in-out 0.1s forwards;
+}
+
+@keyframes showLeftHome {
+    100% {
+        opacity: 1;
+    }
+}
+
+main section #home-left h1 {
+    font-size: 3.5rem;
+}
+
+main section #home-left h1 span {
+    color: #0254B0;
+}
+
+main section #home-left h2 {
+    width: 90%;
+    font-size: 3rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+main section #home-left a {
+    font-size: 1.3rem;
+    padding: 10px 35px;
+    color: #FFFFFF;
+    background-color: #0254B0;
+    border-radius: 50px;
+    
+} 
+
+main section #home-right {
+    width: 50%;
+    position: relative;
+}
+
+
+main section #home-right #blob {
+    height: 950px;
+    width: 950px;
+    /* background-color: aquamarine; */
+    position: absolute;
+    border-radius: 54% 79% 75% 58% / 70% 56% 71% 47%;
+    right: -300px;
+    top: -280px;
+    z-index: -1;
+}
+
+main section #home-right #blob img {
+    width: 100%;
+    filter: drop-shadow(0px 0px 50px rgb(2, 84, 176, 0.5));
+}
+
+main section #home-right #planeImg {
+    position: absolute;
+    right: -500px;
+    top: -100px;
+    z-index: 1;
+    transform: scale(0.8);
+    transition: .2s ease-in-out;
+    animation: planeMove 1s 0.2s forwards;
+}
+
+@keyframes planeMove {
+    to {
+        right: -200px;
+        top: -250px;
+        transform: scale(1);
+    }
+}
+
+#account {
+    background-image: url('/imgs/loginBG.png');
+}
+
+#account #overlay #left {
+    width: 70%;
+}
+
+#account #overlay #right {
+    width: 45%;
+}
+
+#account #overlay {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 0px 200px;
+    justify-content: space-between;
+    background-color: rgb(255, 255, 255, 0.9);    
+    transition: all .2s ease-in-out;
+}
+
+.bg-blur {
+    width: 75%;
+    background-image: url('/imgs/loginBG.png');
+    background-size: fill;
+    background-position: -1200px -250px;
+    border-radius: 20px;
+    margin: 0px auto;
+}
+
+
+#account #overlay form {
+    margin: 0px auto;
+    
+    border-radius: 20px;
+    color: #FFFFFF;
+    
+    backdrop-filter: blur(5px);
+    box-shadow: 0px 0px 25px rgb(0, 0, 0, 0.9);
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+}
+
+#account #overlay form h1 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+
+}
+
+#account #overlay form label {
+    font-size: 1.4rem;
+}
+
+#account #overlay form input {
+    font-size: 1.3rem;
+    padding: 5px;
+    border: none;
+    outline: none;
+    color: #FFFFFF;
+    background-color: transparent;
+    border-bottom: 1px solid #FFFFFF;    
+    margin: 15px 0px;
+}
+
+#account #overlay form p {
+    text-align: center;
+}
+
+#account #overlay form p:last-child{
+    text-align: center;
+    font-size: 0.7rem;
+}
+
+#account #overlay form p a {
+    color: #FFFFFF;
+    text-decoration: underline;
+}
+
+#account #overlay form input[type=submit] {
+    border: 1px solid #FFFFFF;
+    border-radius: 50px;
+    margin-top: 10px;
+    color: #FFFFFF;
+    width: 30%;
+    align-self: center;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 5px 10px;
+}
+
+#account img {
+    width: 98%;
+}
+
+#sgFrm {
+    display: none;
+}
+
+main #tf {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 200px;
+    height: 100vh;
+}
+
+#tf #tf-behind {
+    width: 200%;
+    height: 50%;
+    position: fixed;
+    left: -50%;
+    top: 0;
+    border-radius: 50%;
+    z-index: -1;
+    background-image: url('/imgs/tfBG.png');
+    background-size: 55%;
+    background-position: 950px -550px;
+    background-repeat: no-repeat;
+    box-shadow: 0px 10px 25px rgb(0, 0, 0, 0.75);
+}
+
+#tf #tf-forward {
+    opacity: 0;
+    margin-top: 5%;
+    text-align: center;
+    width: 100%;
+    background-color: rgb(255, 255, 255, 0.6);
+    border-radius: 20px;
+    box-shadow: 0px 8.5px 21px rgb(0, 0, 0, 0.5);
+    padding: 40px;
+    animation: showtf 0.5s ease-in-out 0.1s forwards;
+    /* border: 1px solid #000000;  */
+}
+
+@keyframes showtf {
+    100% {
+        opacity: 1;
+    }
+}
+#tf #tf-forward h1 {
+    font-size: 4rem;
+    color: #0254B0;
+}
+
+#card-area {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+    transition: all 0.2s ease-in-out;
+}
+
+.card {
+    color: #777777;
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0px 2px 5px rgb(0, 0, 0, 0.2);
+    margin: 50px 25px;
+    position: relative;
+
+    transition: all 0.2s ease-in-out;
+}
+
+#card1, #card2, #card3, #card4, #card5, #card6, #card7, #card8, #card9 {
+    width: 18%;
+    height: 150px;
+    transition: all 0.2s ease-in-out;
+}
+
+#card1:hover img, #card2:hover img, #card3:hover img, #card4:hover img, #card5:hover img, #card6:hover img, #card7:hover img, #card8:hover img, #card9:hover img {
+    animation: rotateFan 0.5s 0.2s linear infinite;
+}
+
+@keyframes rotateFan {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.card h2 {
+    font-size: 2.2rem;
+    color: #0254B0;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+}
+
+.card h4 {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.img-area {
+    width: 50%;
+    margin: auto;
+    margin-top: -33%;
+}
+
+.img-area img {
+    width: 100%;
+    animation: fan-rotate 1s 0.2s forwards;
+}
+
+@keyframes fan-rotate {
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.card .more-info {
+    opacity: 0;
+    position: absolute;
+    left: 0; 
+    right: 0; 
+    margin-left: auto; 
+    margin-right: auto; 
+    transition: opacity 0.2s ease-in-out;
+}
+
+main #flsrc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 200px;
+    height: 100vh;
+}
+
+#flsrc #flsrc-behind {
+    width: 200%;
+    height: 50%;
+    position: fixed;
+    left: -50%;
+    top: 0;
+    border-radius: 50%;
+    z-index: -1;
+    background-image: url('/imgs/bookBG.png');
+    background-size: 50%;
+    background-position: 950px -150px;
+    background-repeat: no-repeat;
+    box-shadow: 0px 10px 25px rgb(0, 0, 0, 0.75);
+}
+
+#flsrc #flsrc-forward {
+    opacity: 0;
+    margin-top: 5%;
+    text-align: center;
+    /* width: 100%; */
+    background-color: rgb(255, 255, 255, 1);
+    border-radius: 20px;
+    box-shadow: 0px 8.5px 21px rgb(0, 0, 0, 0.5);
+    padding: 40px;
+    animation: showflsrc 0.5s ease-in-out 0.1s forwards;
+    margin: 0 auto;
+    /* border: 1px solid #000000;  */
+}
+
+@keyframes showflsrc {
+    100% {
+        opacity: 1;
+    }
+}
+
+#flsrc #flsrc-forward h1 {
+    font-size: 4rem;
+    color: #0254B0;
+}
+
+#flsrc #flsrc-forward i {
+    z-index: 2;
+    font-size: 1.2rem;
+    color: #BABABA;
+    background-color: #FFFFFF;
+    border: 1px solid #BABABA;
+    border-radius: 100%;
+    padding: 10px;
+    margin: 0px -10px;
+    cursor: pointer;
+}
+#flsrc #flsrc-forward form {
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+#flsrc #flsrc-forward #inner-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width:80%; */
+    margin: auto;
+}
+
+#inner-form select {
+    /* width: 60%; */
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 20px 25px;
+    border-radius: 10px;
+    border: 1px solid #BABABA;
+    background-color: transparent;
+    margin: 0px 0px;
+    z-index: 1;
+    appearance: none;
+}
+
+#inner-form select::-ms-expand {
+    display: none;
+}
+
+#inner-form input[type=date] {
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 20px 25px;
+    border-radius: 10px;
+    border: 1px solid #BABABA;
+    background-color: transparent;
+    margin-left: 20px;
+    z-index: 1;
+}
+
+
+#inner-form select option {
+    background-color: none;
+    padding: 50px 5px;
+}
+
+#inner-form #to, #inner-form #from {
+    position: relative;
+}
+
+#inner-form label {
+    z-index: 0;
+    font-size: 1.2rem;
+    position: absolute;
+    transform: translate(-225px, 22px);
+    color: #777777;
+    font-weight: 600;
+    transition: transform 0.2s ease-in-out;
+}
+
+#date label {
+    font-size: 0.9rem;
+    transform: translate(-200px, 8px);
+}
+
+#inner-form .form-control:focus + label,
+#inner-form .form-control:visited + label {
+    font-size: 0.9rem;
+    transform: translate(-235px, 8px);    
+}
+
+#searchBtn {
+    font-size: 1.3rem;
+    padding: 10px 35px;
+    color: #FFFFFF;
+    background-color: #0254B0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#flsrc table {
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#flsrc th, #flsrc td {
+    font-size: 1.3rem;
+}
+
+#flsrc th {
+    color: #0254B0;
+    font-weight: 800;
+    text-align: center;
+    padding: 5px 20px;
+}
+
+#flsrc td {
+    color: #000000;
+    font-weight: 500;
+    padding: 5px 20px;
+}
+
+#flsrc td a {
+    color: #0254B0;
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+main #bf {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 200px;
+    height: 100vh;
+}
+
+#bf #bf-behind {
+    width: 200%;
+    height: 50%;
+    position: fixed;
+    left: -50%;
+    top: 0;
+    border-radius: 50%;
+    z-index: -1;
+    background-image: url('/imgs/bookBG.png');
+    background-size: 50%;
+    background-position: 950px -150px;
+    background-repeat: no-repeat;
+    box-shadow: 0px 10px 25px rgb(0, 0, 0, 0.75);
+}
+
+#bf #bf-forward {
+    opacity: 0;
+    margin-top: 5%;
+    text-align: center;
+    /* width: 100%; */
+    background-color: rgb(255, 255, 255, 1);
+    border-radius: 20px;
+    box-shadow: 0px 8.5px 21px rgb(0, 0, 0, 0.5);
+    padding: 40px;
+    animation: showbf 0.5s ease-in-out 0.1s forwards;
+    margin: 0 auto;
+    /* border: 1px solid #000000;  */
+}
+
+@keyframes showbf {
+    100% {
+        opacity: 1;
+    }
+}
+
+#bf #bf-forward h1 {
+    font-size: 4rem;
+    color: #0254B0;
+}
+
+#bf #bf-forward i {
+    z-index: 2;
+    font-size: 1.2rem;
+    color: #BABABA;
+    background-color: #FFFFFF;
+    border: 1px solid #BABABA;
+    border-radius: 100%;
+    padding: 10px;
+    margin: 0px -10px;
+    cursor: pointer;
+}
+#bf #bf-forward form {
+    margin: 0px auto;
+    margin-top: 20px;
+}
+
+#bf #bf-forward form {
+    width: 100%;
+    margin: auto;
+}
+
+/* #bf #bf-forward form input[type=text], #bf #bf-forward form input[type=date], #bf #bf-forward form input[type=number] {
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 20px 25px;
+    border-radius: 10px;
+    border: 1px solid #BABABA;
+    background-color: transparent;
+    z-index: 1;
+} */
+
+#bf #bf-forward form input[type=text], #bf #bf-forward form input[type=number], #bf #bf-forward form input[type=date] {
+    /* width: 100%; */
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 20px 25px;
+    border-radius: 10px;
+    border: 1px solid #BABABA;
+    background-color: transparent;
+    z-index: 1;
+}
+
+#bf #bf-forward form input[type=text]:first-child {
+    /* width: 100%; */
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 20px 25px;
+    border-radius: 10px;
+    border: 1px solid #BABABA;
+    background-color: transparent;
+    z-index: 1;
+}
+
+#bf #bf-forward form select {
+    /* width: 100%; */
+    outline: none;
+    font-size: 1.1rem;
+    font-weight: 500;
+    padding: 20px 25px;
+    border-radius: 10px;
+    border: 1px solid #BABABA;
+    background-color: transparent;
+    margin: 0px 0px;
+    z-index: 1;
+    appearance: none;
+}
+
+#bf #bf-forward form select::-ms-expand {
+    display: none;
+}
+
+
+#bf #bf-forward form select option {
+    background-color: none;
+    padding: 50px 5px;
+}
+
+#bf #bf-forward form #to, #bf #bf-forward form #from {
+    position: relative;
+}
+
+#bf #bf-forward form label {
+    z-index: 0;
+    font-size: 1.2rem;
+    position: absolute;
+    transform: translate(-220px, 22px);
+    color: #777777;
+    font-weight: 600;
+    transition: transform 0.2s ease-in-out;
+}
+
+#bf #bf-forward form #date label {
+    font-size: 0.9rem;
+    transform: translate(-200px, 8px);
+}
+
+#bf #bf-forward form .form-control:focus + label {
+    font-size: 0.9rem;
+    transform: translate(-235px, 8px);
+}
+
+#bf #bf-forward form .row:nth-child(1) .form-control:focus + label {
+    font-size: 0.9rem;
+    transform: translate(-250px, 8px);
+}
+
+#bookBtn {
+    font-size: 1.3rem;
+    padding: 10px 35px;
+    color: #FFFFFF;
+    background-color: #0254B0;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#bf table {
+    width: 100%;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#bf th, #bf td {
+    font-size: 1.3rem;
+}
+
+#bf th {
+    color: #0254B0;
+    font-weight: 800;
+    text-align: center;
+    padding: 5px 20px;
+}
+
+#bf td {
+    color: #000000;
+    font-weight: 500;
+    padding: 5px 20px;
+}
+
+#bf td a {
+    color: #0254B0;
+    font-weight: 600;
+    text-decoration: underline;
+}
