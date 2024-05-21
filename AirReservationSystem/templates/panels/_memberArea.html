@@ -1,0 +1,21 @@
+{% if role == "admin" %}
+    <div id="memberArea">
+        <div class="sub-panels">
+            <h2>Member Area</h2>
+            <div class="tiles">
+                <a href="{% url "NewStaff" %}">
+                    <div class="tile1">
+                        <img src="/static/imgs/icons/NewStaffIco.png" alt="New Staff Icon">
+                        <h4>Add New Staff</h4>
+                    </div>
+                </a>
+                <a href="{% url "ManageStaff" %}">
+                    <div class="tile2">
+                        <img src="/static/imgs/icons/ManStaffIco.png" alt="Manage Staff Icon">
+                        <h4>Manage Staff</h4>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+{% endif %}

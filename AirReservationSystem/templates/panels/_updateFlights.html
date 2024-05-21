@@ -1,0 +1,107 @@
+<div id="availableFlights">
+    <div class="sub-panels">
+        <div id="left">
+            <h2>Available Flights</h2>
+            <div class="tiles">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID.</th>
+                            <th>Flight No</th>
+                            <th>From</th>
+                            <th>To</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for flight in flights %}
+                            <tr>
+                                <td>{{ flight.id }}</td>
+                                <td>{{ flight.FlightNo }}</td>
+                                <td>{{ flight.From }}</td>
+                                <td>{{ flight.To }}</td>
+                                <td>
+                                    <a href="{% url "UpdateFlight" flight.id %}" class="btn2">Update</a>
+                                </td>
+                            </tr> 
+                        {% endfor %}                     
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% if upFlight %}
+        <div id="right">
+            <h2>Update Flight Details</h2>
+            <div class="tiles">
+                {% for flight in upFlight %}
+                <form action="{% url "UpdateFlight" flight.id %}" method="POST">
+                    {% csrf_token %}
+                    <div class="row">
+                        <div>
+                            <input type="text" name="fNumber" id="fNumber" value="{{ flight.FlightNo }}">
+                            <label for="fNumber" id="fNumberLabel">Flight No</label>
+                        </div>
+                        <div>
+                            <input type="text" name="fareEc" id="fareEc" value="{{ flight.Fare_Economy }}">
+                            <label for="fareEc" id="fareEcLabel">Fare (Economy)</label>
+                        </div>
+                        <div>
+                            <input type="text" name="fareBc" id="fareBc" value="{{ flight.Fare_Business }}">
+                            <label for="fareBc" id="fareBcLabel">Fare (Business Class)</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <select name="from" id="from">
+                                <option value="" selected disabled hidden></option>
+                                {% for city in cities %}
+                                    {% if flight.From == city.City %}
+                                        <option value="{{ city.City }}" selected>{{ city.City }}</option>
+                                        {% else %}
+                                        <option value="{{ city.City }}">{{ city.City }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            <label for="from" id="fromLabel">From</label>
+                        </div>
+                        <div>
+                            <select name="to" id="to">
+                                <option value="" selected disabled hidden></option>
+                                {% for city in cities %}
+                                    {% if flight.To == city.City %}
+                                        <option value="{{ city.City }}" selected>{{ city.City }}</option>
+                                        {% else %}
+                                        <option value="{{ city.City }}">{{ city.City }}</option>
+                                    {% endif %}
+                                {% endfor %}
+                            </select>
+                            <label for="to" id="toLabel">To</label>
+                        </div>
+                        <div>
+                            <input type="date" name="departure" id="departure" value="{{ flight.FlightDate }}">
+                            <label for="departure" id="departureLabel">Departure</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <input type="time" name="dTime" id="dTime" value="{{ flight.Departure }}">
+                            <label for="dTime" id="dTimeLabel">Departure Time</label>
+                        </div>
+                        <div>
+                            <input type="time" name="aTime" id="aTime" value="{{ flight.Arrival }}">
+                            <label for="aTime" id="aTimeLabel">Arrival Time</label>
+                        </div>
+                        <div>
+                            <input type="text" name="status" id="status" value="{{ flight.Status }}">
+                            <label for="status" id="statusLabel">Status</label>
+                        </div>
+                        
+                    </div>
+                    <input type="submit" name="updateBtn" id="updateBtn" class="btn" value="Update">
+                </form>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>

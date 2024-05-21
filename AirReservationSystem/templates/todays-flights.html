@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="tf">
+    <div id="tf-behind">
+
+    </div>
+    <div id="tf-forward">
+        <h1>Today's Flights</h1>
+        <div id="card-area">
+            {% for flight in flights %}
+                <div class="card" id="card{{ forloop.counter }}">
+                    <div class="img-area">
+                        <img src="/static/imgs/planeFan.png" alt="">
+                    </div>
+                    <h2>{{ flight.FlightNo }}</h2>
+                    <h3>{{ flight.From }} - {{ flight.To }}</h3>
+                    
+                    <div class="more-info">
+                        <h4>Departure - {{ flight.Departure }}</h4>
+                        <h4>Arrival - {{ flight.Arrival }}</h4>
+                    </div>
+                </div>
+            {% endfor %}
+            {% comment %} <div class="card" id="card1">
+                <div class="img-area">
+                    <img src="/static/imgs/planeFan.png" alt="">
+                </div>
+                <h2>PK - 810</h2>
+                <h3>Islamabad - Karachi</h3>
+                
+                <div class="more-info">
+                    <h4>Departure - 03:00 PM</h4>
+                    <h4>Arrival - 04:30 PM</h4>
+                </div>
+            </div>
+            <div class="card" id="card2">
+                <div class="img-area">
+                    <img src="/static/imgs/planeFan.png" alt="">
+                </div>
+                <h2>PK - 810</h2>
+                <h3>Islamabad - Karachi</h3>
+                
+                <div class="more-info">
+                    <h4>Departure - 03:00 PM</h4>
+                    <h4>Arrival - 04:30 PM</h4>
+                </div>
+            </div>
+            <div class="card" id="card3">
+                <div class="img-area">
+                    <img src="/static/imgs/planeFan.png" alt="">
+                </div>
+                <h2>PK - 810</h2>
+                <h3>Islamabad - Karachi</h3>
+                
+                <div class="more-info">
+                    <h4>Departure - 03:00 PM</h4>
+                    <h4>Arrival - 04:30 PM</h4>
+                </div>
+            </div>
+            <div class="card" id="card4">
+                <div class="img-area">
+                    <img src="/static/imgs/planeFan.png" alt="">
+                </div>
+                <h2>PK - 810</h2>
+                <h3>Islamabad - Karachi</h3>
+                
+                <div class="more-info">
+                    <h4>Departure - 03:00 PM</h4>
+                    <h4>Arrival - 04:30 PM</h4>
+                </div>
+            </div>
+            <div class="card" id="card5">
+                <div class="img-area">
+                    <img src="/static/imgs/planeFan.png" alt="">
+                </div>
+                <h2>PK - 810</h2>
+                <h3>Islamabad - Karachi</h3>
+                
+                <div class="more-info">
+                    <h4>Departure - 03:00 PM</h4>
+                    <h4>Arrival - 04:30 PM</h4>
+                </div>
+            </div>
+            <div class="card" id="card6">
+                <div class="img-area">
+                    <img src="/static/imgs/planeFan.png" alt="">
+                </div>
+                <h2>PK - 810</h2>
+                <h3>Islamabad - Karachi</h3>
+                
+                <div class="more-info">
+                    <h4>Departure - 03:00 PM</h4>
+                    <h4>Arrival - 04:30 PM</h4>
+                </div>
+            </div>
+            <div class="card" id="card7">
+                <div class="img-area">
+                    <img src="/static/imgs/planeFan.png" alt="">
+                </div>
+                <h2>PK - 810</h2>
+                <h3>Islamabad - Karachi</h3>
+                
+                <div class="more-info">
+                    <h4>Departure - 03:00 PM</h4>
+                    <h4>Arrival - 04:30 PM</h4>
+                </div>
+            </div>
+            <div class="card" id="card8">
+                <div class="img-area">
+                    <img src="/static/imgs/planeFan.png" alt="">
+                </div>
+                <h2>PK - 810</h2>
+                <h3>Islamabad - Karachi</h3>
+                
+                <div class="more-info">
+                    <h4>Departure - 03:00 PM</h4>
+                    <h4>Arrival - 04:30 PM</h4>
+                </div>
+            </div> {% endcomment %}
+            
+        </div>
+    </div>
+</section>
+{% endblock %}

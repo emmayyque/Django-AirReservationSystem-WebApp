@@ -1,0 +1,58 @@
+<div id="newFlights">
+    <div class="sub-panels">
+        <h2>Add New Flights</h2>
+        <div class="tiles">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div>
+                        <input type="text" name="fNumber" id="fNumber">
+                        <label for="fNumber" id="fNumberLabel">Flight No</label>
+                    </div>
+                    <div>
+                        <select name="from" id="from">
+                            <option value="" selected disabled hidden></option>
+                            {% for city in cities %}
+                                <option value="{{ city.City }}">{{ city.City }}</option>    
+                            {% endfor %}
+                        </select>
+                        <label for="from" id="fromLabel">From</label>
+                    </div>
+                    <div>
+                        <select name="to" id="to">
+                            <option value="" selected disabled hidden></option>
+                            {% for city in cities %}
+                                <option value="{{ city.City }}">{{ city.City }}</option>    
+                            {% endfor %}
+                        </select>
+                        <label for="to" id="toLabel">To</label>
+                    </div>
+
+                    <div>
+                        <input type="date" name="departure" id="departure">
+                        <label for="departure" id="departureLabel">Departure</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div>
+                        <input type="time" name="dTime" id="dTime">
+                        <label for="dTime" id="dTimeLabel">Departure Time</label>
+                    </div>
+                    <div>
+                        <input type="time" name="aTime" id="aTime">
+                        <label for="aTime" id="aTimeLabel">Arrival Time</label>
+                    </div>
+                    <div>
+                        <input type="text" name="fareEc" id="fareEc">
+                        <label for="fareEc" id="fareEcLabel">Fare (Economy)</label>
+                    </div>
+                    <div>
+                        <input type="text" name="fareBc" id="fareBc">
+                        <label for="fareBc" id="fareBcLabel">Fare (Business Class)</label>
+                    </div>
+                </div>
+                <input type="submit" name="addBtn" id="addBtn" class="btn" value="Add Flight">
+            </form>
+        </div>
+    </div>
+</div>

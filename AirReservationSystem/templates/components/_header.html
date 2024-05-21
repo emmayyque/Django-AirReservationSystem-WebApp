@@ -1,0 +1,24 @@
+<header>
+    <img src="/static/imgs/PIALogo.png" alt="PIA's Logo">
+    <nav>
+        <ul>
+            <li><a href="{% url "Home" %}">Home</a></li>
+            <li><a href="{% url "TodaysFlights" %}">Today's Flights</a></li>
+            <li><a href="{% url "FlightSearch" %}">Flight Search</a></li>
+            <li><a href="{% url "BookFlight" %}">Book Flight</a></li>
+            {% if username != null %}
+                <li><a href="{% url "MyBookings" %}">My Bookings</a></li>
+            {% endif %}            
+        </ul>
+    </nav>
+    <div>
+        {% if username != null %}
+            <a >Hey, <span>{{ username }}</span></a>
+            <a href="{% url "UserLogout" %}">Logout</a>
+        {% else %}
+            <a href="{% url "Login" %}">Login</a>
+            <a href="{% url "Signup" %}">Sign Up</a>
+        {% endif %}
+    </div>
+</header>
+
