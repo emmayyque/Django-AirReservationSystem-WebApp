@@ -1,0 +1,33 @@
+<div id="flightArea">
+    <div class="sub-panels">
+        <h2>Flight Area</h2>
+        <div class="tiles">
+            <a href="{% url "NewFlights" %}">
+                <div class="tile1">
+                    <img src="/static/imgs/icons/NewFlightIco.png" alt="New Flight Icon">
+                    <h4>Add New Flights</h4>
+                </div>
+            </a>
+            <a href="{% url "UpdateFlights" %}">
+                <div class="tile2">
+                    <img src="/static/imgs/icons/UpdateFlightIco.png" alt="Update Flights Icon">
+                    <h4>Update Flights</h4>
+                </div>
+            </a>
+            {% if role == "staff" %}
+                <a href="booking.html">
+                    <div class="tile1">
+                        <img src="/static/imgs/icons/BookFlightIco.png" alt="Manage Bookings Icon">
+                        <h4>Book Flight</h4>
+                    </div>
+                </a>                    
+            {% endif %}
+            <a href="pManageBookings.html">
+                <div class="tile2">
+                    <img src="/static/imgs/icons/ManBookingsIco.png" alt="Manage Bookings Icon">
+                    <h4>Manage Bookings</h4>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>

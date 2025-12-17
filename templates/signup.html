@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="account">
+    <div id="overlay">
+        <div id="left">
+            <img src="/static/imgs/planeTrack.gif" alt="Plane Track to Login System" id="planeTrack">                
+        </div>
+        <div id="right" style="left: 5%">
+            <div class="bg-blur">
+                <form action="{% url "MemberLogin" %}" method="POST" id="lgFrm" style="display: none">
+                    {% csrf_token %}
+                        {% if message != null %}
+                            <p id="errMessage">{{ message }}</p>
+                        {% endif %}
+                    <h1>Login</h1>
+                    <label for="passportNum">Passport #</label>
+                    <input type="text" name="passportNum" required>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" required>
+                    <input type="submit" name="lgBtn" id="lgBtn" value="Login">
+                    
+                    <p>New to the platform? Please <a id="sgBtn1">signup</a></p>
+                    <p id="terms">By signing in you agreed to our Terms & Conditions.</p>
+                </form>
+
+                <form action="{% url "UserRegistration" %}" method="POST" id="sgFrm" style="display: flex">
+                    {% csrf_token %}
+                        {% if message != null %}
+                            <p id="message">{{ message }}</p>
+                        {% endif %}
+                    <h1>Signup</h1>
+                    <label for="name">Name</label>
+                    <input type="text" name="name" required>
+                    <label for="username">Username</label>
+                    <input type="text" name="username" required>
+                    <label for="email">Email</label>
+                    <input type="email" name="email" required>
+                    <label for="password">Password</label>
+                    <input type="password" name="password" required>
+                    <label for="cnicNum">CNIC #</label>
+                    <input type="text" name="cnicNum" required>
+                    <label for="passportNum">Passport #</label>
+                    <input type="text" name="passportNum" required>
+                    <input type="submit" name="sgBtn" id="sgBtn" value="Sing Up">
+                    
+                    <p>Already a member? Please <a id="lgBtn1">login</a></p>
+                    <p id="terms">By signing up you agreed to our Terms & Conditions.</p>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+{% endblock %}

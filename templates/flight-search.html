@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section id="flsrc">
+    <div id="flsrc-behind">
+
+    </div>
+    <div id="flsrc-forward">
+        <!-- <img src="imgs/plane.png" alt="plane image here"> -->
+        <h1>{{ name }}</h1>
+        <form action="{% url "FlightSearch" %}" method="POST">
+            {% csrf_token %}
+            <div id="inner-form">
+                <div id="from" class="form-group">                          
+                    <select name="from" class="form-control" id="fSelect">
+                        <option value="" selected disabled hidden></option>
+                        {% for city in cities %}
+                            <option value="{{ city.City }}">{{ city.City }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="from" id="flabel">From</label>
+                </div>
+                <i class="fa fa-exchange" aria-hidden="true" id="exchangeIco"></i>
+                <div id="to" class="form-group">
+                    <select name="to" class="form-control"  id="tSelect">
+                        <option value="" selected disabled hidden></option>
+                        {% for city in cities %}
+                            <option value="{{ city.City }}">{{ city.City }}</option>
+                        {% endfor %}
+                    </select>
+                    <label for="to" id="tlabel">To</label>
+                </div>
+                <div id="date" class="form-group">
+                    <input type="date" name="departure" id="departure">
+                    <label for="departure" id="departure">Departure</label>
+                </div>
+            </div>
+            <input type="submit" name="searchBtn" id="searchBtn" value="Search">
+        </form> 
+        {% if flights != None %}
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Flight No</th>
+                    <th>Departure</th>
+                    <th>Arrival</th>
+                    <th>Economy</th>
+                    <th>Business</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for flight in flights %}
+                    {% if flight != None %}
+                        <tr>
+                            <td>{{ flight.id }}</td>
+                            <td>{{ flight.FlightNo }}</td>
+                            <td>{{ flight.Departure }}</td>
+                            <td>{{ flight.Arrival }}</td>
+                            <td>{{ flight.Fare_Economy }}</td>
+                            <td>{{ flight.Fare_Business }}</td>
+                            <td><a href="">Book Now</a></td>
+                        </tr>
+                    {% else %}
+                        <tr>
+                            <td colspan="7">Sorry, There are no Flights Available for this route on selected Date/Day</td>
+                        </tr>
+                    {% endif %}
+                {% endfor %}
+            </tbody>
+        </table>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

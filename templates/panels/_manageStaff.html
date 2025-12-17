@@ -1,0 +1,38 @@
+<div id="manageStaff">
+    <div class="sub-panels">
+        <h2>Manage Staff</h2>
+        <div class="tiles">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Username</th>
+                        <th>Email</th>
+                        <th>DOB</th>
+                        <th>Address</th>
+                        <th>Shift</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for person in staff %}
+                        <tr>
+                            <td>{{ person.id }}</td>
+                            <td>{{ person.Name }}</td>
+                            <td>{{ person.Username }}</td>
+                            <td>{{ person.Email }}</td>
+                            <td>{{ person.DOB }}</td>
+                            <td>{{ person.Address }}</td>
+                            <td>{{ person.Shift }}</td>
+                            <td>
+                                <a href="{% url "UpdateStaff" person.id %}" class="btn2">Update</a>
+                                <a href="" class="btn3">Delete</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

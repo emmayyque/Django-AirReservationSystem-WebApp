@@ -1,0 +1,67 @@
+<div id="newStaff">
+    <div class="sub-panels">
+        <h2>Add New Staff</h2>
+        <div class="tiles">
+            <form action="{% url "NewStaff" %}" method="POST">
+                {% csrf_token %}
+                <div class="row">
+                    <div class="column">
+                        <div>
+                            <input type="text" name="fname" id="fname">
+                            <label for="fname" id="fnameLabel">Full Name</label>
+                        </div>
+
+                        <div>
+                            <input type="text" name="uname" id="uname">
+                            <label for="uname" id="uNameLabel">Username</label>
+                        </div>
+
+                        <div>
+                            <input type="email" name="email" id="email">
+                            <label for="email" id="emailLabel">Email Address</label>
+                        </div>
+
+                        <div>
+                            <input type="password" name="password" id="password">
+                            <label for="password" id="passwordLabel">Password</label>
+                        </div>
+                    </div>
+
+                    <div class="column">   
+                        <div>
+                            <input type="date" name="dob" id="dob">
+                            <label for="dob" id="dobLabel">DOB</label>
+                        </div>
+
+                        <div>
+                            <input type="text" name="address" id="address">
+                            <label for="address" id="addressLabel">Address</label>
+                        </div>
+
+                        <!-- <div>
+                            <div id="gender">
+                                <input type="radio" value="Male" name="gen">
+                                <label for="gen">Male</label>
+                                <input type="radio" value="Female" name="gen">
+                                <label for="gen">Female</label>
+                            </div>
+                            <label for="gen" id="genderLabel">Gender</label>
+                        </div> -->
+
+                        <div>
+                            <select name="shift" id="shift">
+                                <option value="" selected disabled hidden></option>
+                                <option value="Morning Shift">Morning Shift</option>
+                                <option value="Night Shift">Night Shift</option>
+                            </select>
+                            <label for="shift" id="shiftLabel">Shift</label>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <input type="submit" name="bookBtn" id="bookBtn" class="btn" value="Add Staff">
+            </form>
+        </div>
+    </div>
+</div>
